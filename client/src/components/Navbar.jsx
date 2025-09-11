@@ -15,13 +15,6 @@ const Navbar = () => {
 
   return (
     <header className="w-full fixed top-0 left-0 z-50 shadow-lg bg-white">
-      {/* Top Bar */}
-      <div className="text-center font-medium py-1 sm:py-2 text-xs sm:text-sm bg-gradient-to-r from-violet-500 via-[#9938CA] to-[#E0724A] text-white">
-        <p>
-          Exclusive Price Drop! Hurry,{" "}
-          <span className="underline underline-offset-2">Offer Ends Soon!</span>
-        </p>
-      </div>
 
       {/* Navigation */}
       <nav className="flex items-center justify-between px-4 sm:px-6 md:px-16 lg:px-24 xl:px-32 py-3 sm:py-4 text-gray-900">
@@ -73,7 +66,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
 <div
-  className={`absolute top-full left-0 w-full bg-white shadow-lg transition-all duration-300 ease-in-out md:hidden ${
+  className={`absolute top-full left-0 right-0 w-full bg-white shadow-lg transition-all duration-300 ease-in-out md:hidden ${
     isMenuOpen ? "max-h-[80vh] opacity-100 overflow-y-auto" : "max-h-0 opacity-0 overflow-hidden"
   }`}
 >
