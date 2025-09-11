@@ -14,7 +14,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 bg-white shadow-lg overflow-hidden">
+    <header className="w-full fixed top-0 left-0 z-50 bg-white shadow-lg overflow-x-hidden">
       <nav className="flex items-center justify-between px-4 sm:px-6 md:px-16 lg:px-24 xl:px-32 py-3 text-gray-900 w-full max-w-full">
         {/* Logo on the Left */}
         <Link
@@ -72,8 +72,8 @@ const Navbar = () => {
 
       {/* Mobile Slide-down Menu */}
       <div
-        className={`fixed top-[64px] right-0 left-0 z-40 bg-white shadow-2xl rounded-b-2xl transition-all duration-300 ease-in-out md:hidden w-full max-w-full overflow-hidden ${
-          isMenuOpen ? "max-h-[80vh] opacity-100 py-4 overflow-y-auto" : "max-h-0 opacity-0"
+        className={`fixed top-[64px] right-0 left-0 z-40 bg-white shadow-2xl rounded-b-2xl transition-all duration-300 ease-in-out md:hidden w-full max-w-full overflow-x-hidden ${
+          isMenuOpen ? "max-h-[80vh] opacity-100 py-4 overflow-y-auto overflow-x-hidden" : "max-h-0 opacity-0"
         }`}
       >
         <ul className="flex flex-col gap-3 px-6">
@@ -88,18 +88,6 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
-
-          {/* Contact Button Inside Mobile Menu */}
-          <li>
-            <a
-              href="https://wa.me/918468006792"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-violet-500 to-[#E0724A] text-white font-medium rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all"
-            >
-              Contact <ArrowRight className="w-4 h-4" />
-            </a>
-          </li>
         </ul>
       </div>
     </header>
