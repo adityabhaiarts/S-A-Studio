@@ -51,24 +51,26 @@ export default function About() {
         * { font-family: 'Poppins', sans-serif; }
       `}</style>
 
-      <section className="relative py-20 bg-white">
-        <h1 className="text-3xl font-semibold text-center mx-auto">
+      <section className="relative py-20 bg-white overflow-x-hidden">
+        {/* Title */}
+        <h1 className="text-3xl font-semibold text-center mx-auto px-4">
           About our Video Editor
         </h1>
-        <p className="text-sm text-slate-500 text-center mt-2 max-w-lg mx-auto">
+        <p className="text-sm text-slate-500 text-center mt-2 max-w-lg mx-auto px-4">
           A visual collection of the features that make our Video Editor fast, powerful, and easy to use.
         </p>
 
         {/* Decorative blurred circle */}
-        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[520px] h-[520px] rounded-full bg-[#FBFFE1] blur-[300px] -z-10"></div>
+        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[90vw] max-w-[520px] h-[90vw] max-h-[520px] rounded-full bg-[#FBFFE1] blur-[300px] -z-10"></div>
 
         {/* Grid */}
-        <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-8 md:px-0 pt-16">
+        <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4 md:px-0 pt-16">
           {features.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2, type: "spring" }}
               className="flex flex-col items-center md:items-start text-center md:text-left bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 hover:scale-105 cursor-pointer"
             >

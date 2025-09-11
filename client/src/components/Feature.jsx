@@ -37,11 +37,10 @@ const Feature = () => {
   ];
 
   return (
-    <div className="bg-white min-h-screen text-gray-900">
-      {/* Features Section */}
-      <section className="py-20 px-6">
+    <div className="bg-white text-gray-900 overflow-x-hidden">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-purple-600 font-medium px-6 py-1.5 rounded-full bg-purple-100 border border-purple-300 w-max mx-auto">
+          <p className="text-purple-600 font-medium inline-block px-6 py-1.5 rounded-full bg-purple-100 border border-purple-300">
             Our Services
           </p>
           <h2 className="text-4xl font-bold mt-6">Video Editing Expertise</h2>
@@ -50,11 +49,11 @@ const Feature = () => {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           {featuresData.map((feature, index) => (
             <div
               key={index}
-              className="group relative p-8 rounded-2xl border border-gray-200 bg-white shadow-md transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:border-purple-300 hover:bg-gradient-to-br hover:from-purple-50 hover:to-white"
+              className="group relative p-6 md:p-8 rounded-2xl border border-gray-200 bg-white shadow-md transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:border-purple-300 hover:bg-gradient-to-br hover:from-purple-50 hover:to-white"
             >
               {/* Icon */}
               <div className="flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 group-hover:bg-purple-600 transition-colors duration-500">
@@ -73,7 +72,7 @@ const Feature = () => {
                 {feature.description}
               </p>
 
-              {/* Hover underline animation */}
+              {/* Hover underline */}
               <span className="absolute bottom-4 left-8 w-0 h-0.5 bg-purple-600 transition-all duration-500 group-hover:w-1/2"></span>
             </div>
           ))}

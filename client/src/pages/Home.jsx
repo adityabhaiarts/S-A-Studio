@@ -4,7 +4,6 @@ import About from '../components/About'
 import Apps from '../components/Apps'
 import Feature from '../components/Feature'
 import Arrivals from '../components/Arrivals'
-import Comments from '../components/Comments'
 import Faq from '../components/Faq'
 
 
@@ -17,7 +16,6 @@ const Home = () => {
       <About />
       <Feature />
       <Arrivals />
-      <Comments />
       <Faq />
     </div>
   )

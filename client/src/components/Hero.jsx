@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import q from '../assets/1.png'
-import w from '../assets/2.png'
-import e from '../assets/3.png'
+import q from '../assets/1.png';
+import w from '../assets/2.png';
+import e from '../assets/3.png';
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   const sliderData = [
     {
       id: 1,
-      title: "Experience of Newly Editions by Saksham Arya Studio",
+      title: "Experience Newly Edited Creations by Saksham Arya Studio",
       offer: "Limited Time Offer: 30% Off",
       buttonText1: "Contact us",
       buttonText2: "Find More",
@@ -71,18 +71,18 @@ const Hero = () => {
                 </button>
                 <button className="group flex items-center justify-center gap-2 px-6 py-2.5 font-medium text-gray-700 hover:text-orange-600 transition">
                   {slide.buttonText2}
-                 <ArrowRight/>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
 
             {/* Image Section */}
             <div className="flex items-center justify-center flex-1">
-            <img
+              <img
                 className="w-40 sm:w-52 md:w-72 lg:w-80 max-w-full h-auto object-contain drop-shadow-lg"
                 src={slide.imgSrc}
                 alt={`Slide ${index + 1}`}
-            />
+              />
             </div>
           </div>
         ))}

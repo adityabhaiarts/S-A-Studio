@@ -1,7 +1,8 @@
-import React from "react";
+// Faq.js
+import React, { useState } from "react";
 
 const Faq = () => {
-  const [openIndex, setOpenIndex] = React.useState(null);
+  const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
     {
@@ -34,12 +35,10 @@ const Faq = () => {
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-        * {
-          font-family: 'Poppins', sans-serif;
-        }
+        * { font-family: 'Poppins', sans-serif; }
       `}</style>
 
-      <div className="max-w-3xl mx-auto flex flex-col items-start justify-center gap-6 px-4 py-10">
+      <div className="max-w-3xl mx-auto flex flex-col gap-6 px-4 py-10">
         <p className="text-indigo-600 text-sm font-medium">FAQ's</p>
         <h1 className="text-3xl font-semibold">Have Questions About Video Editing?</h1>
         <p className="text-sm text-slate-500 mt-2 mb-6">
@@ -49,7 +48,7 @@ const Faq = () => {
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="border-b border-slate-200 py-4 cursor-pointer"
+            className="border-b border-slate-200 py-4 cursor-pointer overflow-hidden"
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
           >
             <div className="flex items-center justify-between">
@@ -60,7 +59,7 @@ const Faq = () => {
                 viewBox="0 0 18 18"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className={`${openIndex === index ? "rotate-180" : ""} transition-all duration-500 ease-in-out`}
+                className={`${openIndex === index ? "rotate-180" : ""} transition-transform duration-500`}
               >
                 <path
                   d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2"
@@ -71,13 +70,13 @@ const Faq = () => {
                 />
               </svg>
             </div>
-            <p
-              className={`text-sm text-slate-500 transition-all duration-500 ease-in-out max-w-full ${
-                openIndex === index ? "opacity-100 max-h-[300px] translate-y-0 pt-4" : "opacity-0 max-h-0 -translate-y-2"
+            <div
+              className={`text-sm text-slate-500 transition-all duration-500 ease-in-out max-h-0 overflow-hidden ${
+                openIndex === index ? "max-h-60 mt-2" : ""
               }`}
             >
-              {faq.answer}
-            </p>
+              <p>{faq.answer}</p>
+            </div>
           </div>
         ))}
       </div>

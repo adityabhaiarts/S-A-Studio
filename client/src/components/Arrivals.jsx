@@ -25,7 +25,7 @@ export default function Arrivals() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4 sm:px-6 lg:px-10 font-poppins">
+    <div className="min-h-screen bg-gray-100 py-10 px-4 sm:px-6 lg:px-10 font-poppins overflow-x-hidden">
       {/* Heading */}
       <h1 className="text-3xl font-bold text-center mb-6 text-slate-800 flex items-center justify-center gap-2">
         <Play className="w-7 h-7 text-indigo-600" /> 🎬 Our Latest Works
@@ -81,7 +81,7 @@ export default function Arrivals() {
 
       {/* Modal */}
       {openImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 sm:p-6">
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 sm:p-6 overflow-x-hidden">
           <div className="bg-white rounded-2xl w-full max-w-3xl overflow-hidden relative">
             {/* Close Button */}
             <button
