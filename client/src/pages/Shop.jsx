@@ -111,7 +111,7 @@ const Shop = () => {
     });
 
   return (
-    <div className="min-h-screen bg-gray-100 py-16 px-4 md:px-8 font-poppins mt-26">
+    <div className="min-h-screen bg-gray-100 py-16 px-4 md:px-8 font-poppins mt-20">
       <div className="text-center mb-8">
         <h1 className="text-4xl md:text-5xl font-bold text-indigo-600 flex justify-center items-center gap-3">
           <Video className="w-10 h-10" /> Video Editing Shop

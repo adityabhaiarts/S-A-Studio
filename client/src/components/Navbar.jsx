@@ -14,13 +14,13 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 shadow-lg bg-white">
-     
-
-      {/* Navigation */}
-      <nav className="flex items-center justify-between px-4 sm:px-6 md:px-16 lg:px-24 xl:px-32 py-3 sm:py-4 text-gray-900">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition">
+    <header className="w-full fixed top-0 left-0 z-50 bg-white shadow-lg overflow-hidden">
+      <nav className="flex items-center justify-between px-4 sm:px-6 md:px-16 lg:px-24 xl:px-32 py-3 text-gray-900 w-full max-w-full">
+        {/* Logo on the Left */}
+        <Link
+          to="/"
+          className="flex items-center gap-2 hover:opacity-80 transition shrink-0"
+        >
           <img
             src={logo}
             alt="Logo"
@@ -31,7 +31,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center space-x-6 lg:space-x-8 font-medium">
+        <ul className="hidden md:flex items-center space-x-6 lg:space-x-8 font-medium flex-shrink-0">
           {menuItems.map((item) => (
             <li key={item.name}>
               <Link
@@ -50,45 +50,58 @@ const Navbar = () => {
           href="https://wa.me/918468006792"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:flex items-center gap-2 bg-gradient-to-r from-violet-500 to-[#E0724A] text-white font-medium px-5 sm:px-6 py-2 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all"
+          className="hidden md:flex items-center gap-2 bg-gradient-to-r from-violet-500 to-[#E0724A] text-white font-medium px-5 sm:px-6 py-2 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all flex-shrink-0"
         >
           Contact <ArrowRight className="w-4 h-4" />
         </a>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Toggle on Right */}
         <button
           aria-label="Toggle menu"
           type="button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="inline-block md:hidden p-2 rounded-md hover:bg-gray-100 transition z-50"
+          className="inline-block md:hidden p-2 rounded-md hover:bg-gray-100 transition z-50 flex-shrink-0"
         >
-          {isMenuOpen ? <X className="w-7 h-7 text-gray-700" /> : <Menu className="w-7 h-7 text-gray-700" />}
+          {isMenuOpen ? (
+            <X className="w-7 h-7 text-gray-700" />
+          ) : (
+            <Menu className="w-7 h-7 text-gray-700" />
+          )}
         </button>
-
-      {/* Mobile Menu */}
-<div
-  className={`fixed top-16 left-0 right-0 z-40 bg-white shadow-2xl rounded-b-2xl transition-all duration-300 ease-in-out md:hidden ${
-    isMenuOpen
-      ? "max-h-[80vh] opacity-100 overflow-y-auto py-4"
-      : "max-h-0 opacity-0 overflow-hidden"
-  }`}
->
-  <ul className="flex flex-col gap-3 px-6">
-    {menuItems.map((item) => (
-      <li key={item.name}>
-        <Link
-          to={item.path}
-          className="block w-full py-3 px-4 rounded-lg text-gray-800 font-medium hover:bg-gradient-to-r hover:from-violet-500 hover:to-[#E0724A] hover:text-white transition"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          {item.name}
-        </Link>
-      </li>
-    ))}
-  </ul>
-</div>
-
       </nav>
+
+      {/* Mobile Slide-down Menu */}
+      <div
+        className={`fixed top-[64px] right-0 left-0 z-40 bg-white shadow-2xl rounded-b-2xl transition-all duration-300 ease-in-out md:hidden w-full max-w-full overflow-hidden ${
+          isMenuOpen ? "max-h-[80vh] opacity-100 py-4 overflow-y-auto" : "max-h-0 opacity-0"
+        }`}
+      >
+        <ul className="flex flex-col gap-3 px-6">
+          {menuItems.map((item) => (
+            <li key={item.name}>
+              <Link
+                to={item.path}
+                className="block w-full py-3 px-4 rounded-lg text-gray-800 font-medium hover:bg-gradient-to-r hover:from-violet-500 hover:to-[#E0724A] hover:text-white transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+
+          {/* Contact Button Inside Mobile Menu */}
+          <li>
+            <a
+              href="https://wa.me/918468006792"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-3 bg-gradient-to-r from-violet-500 to-[#E0724A] text-white font-medium rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all"
+            >
+              Contact <ArrowRight className="w-4 h-4" />
+            </a>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 };

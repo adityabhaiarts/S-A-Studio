@@ -46,7 +46,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden mt-30">
+    <div className="relative w-full overflow-hidden mt-24">
       {/* Slider Wrapper */}
       <div
         className="flex transition-transform duration-700 ease-in-out"
