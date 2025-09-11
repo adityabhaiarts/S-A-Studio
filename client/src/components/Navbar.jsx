@@ -72,7 +72,7 @@ const Navbar = () => {
 
       {/* Mobile Slide-down Menu */}
       <div
-        className={`fixed top-[64px] right-0 left-0 z-40 bg-white shadow-2xl rounded-b-2xl transition-all duration-300 ease-in-out md:hidden w-full max-w-full overflow-x-hidden ${
+        className={`fixed top-[64px] right-0 left-0 z-40 bg-white shadow-2xl rounded-b-2xl transition-all duration-300 ease-in-out md:hidden overflow-x-hidden ${
           isMenuOpen ? "max-h-[80vh] opacity-100 py-4 overflow-y-auto overflow-x-hidden" : "max-h-0 opacity-0"
         }`}
       >
