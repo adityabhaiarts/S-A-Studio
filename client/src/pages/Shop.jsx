@@ -68,9 +68,17 @@ const Shop = () => {
     }
   };
 
+  // ✅ Full Like System (like/unlike toggle)
   const handleLike = (id) => {
-    setLikes(prev => {
-      const updated = { ...prev, [id]: prev[id] ? prev[id] + 1 : 1 };
+    setLikes((prev) => {
+      const updated = { ...prev };
+      if (updated[id]) {
+        // Already liked → unlike
+        delete updated[id];
+      } else {
+        // Not liked yet → like
+        updated[id] = 1;
+      }
       return updated;
     });
   };
@@ -173,17 +181,15 @@ const Shop = () => {
                 <ShoppingCart className="w-4 h-4" /> Buy Now
               </button>
               <button
-                onClick={(e) => { e.stopPropagation(); toggleWishlist(product.id); }}
-                className={`p-2 rounded-xl border ${wishlist.includes(product.id) ? "bg-red-500 text-white" : "bg-white text-gray-500"} hover:bg-red-500 hover:text-white transition flex items-center justify-center gap-1`}
+                onClick={(e) => { e.stopPropagation(); handleLike(product.id); }}
+                className={`p-2 rounded-xl border ${
+                  likes[product.id] 
+                    ? "bg-red-500 text-white" 
+                    : "bg-white text-gray-500 hover:bg-red-500 hover:text-white"
+                } transition flex items-center justify-center gap-1`}
               >
                 <Heart className="w-5 h-5" />
-                <span className="text-xs">{likes[product.id] || 0}</span>
-              </button>
-              <button
-                onClick={(e) => { e.stopPropagation(); handleLike(product.id); }}
-                className="p-2 rounded-xl border bg-yellow-200 hover:bg-yellow-300 transition"
-              >
-                👍
+                <span className="text-xs">{likes[product.id] ? 1 : 0}</span>
               </button>
             </div>
           </motion.div>
