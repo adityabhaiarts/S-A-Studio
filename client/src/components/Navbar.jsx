@@ -1,20 +1,10 @@
-// Navbar.js
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { ArrowRight, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Lock body scroll when mobile menu is open
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [isMenuOpen]);
 
   const menuItems = [
     { name: "Home", path: "/" },
@@ -26,7 +16,7 @@ const Navbar = () => {
   return (
     <header className="w-full fixed top-0 left-0 z-50 bg-white shadow-lg overflow-x-hidden">
       <nav className="flex items-center justify-between px-4 sm:px-6 md:px-16 lg:px-24 xl:px-32 py-3 text-gray-900 w-full max-w-full">
-        {/* Logo */}
+        {/* Logo on the Left */}
         <Link
           to="/"
           className="flex items-center gap-2 hover:opacity-80 transition shrink-0"
@@ -65,10 +55,9 @@ const Navbar = () => {
           Contact <ArrowRight className="w-4 h-4" />
         </a>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Toggle on Right */}
         <button
           aria-label="Toggle menu"
-          aria-expanded={isMenuOpen}
           type="button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="inline-block md:hidden p-2 rounded-md hover:bg-gray-100 transition z-50 flex-shrink-0"
@@ -81,21 +70,13 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      {isMenuOpen && (
-        <div
-          onClick={() => setIsMenuOpen(false)}
-          className="fixed inset-0 bg-black bg-opacity-30 z-40 md:hidden"
-        />
-      )}
-
       {/* Mobile Slide-down Menu */}
       <div
-        className={`fixed top-[64px] right-0 left-0 z-50 bg-white shadow-2xl rounded-b-2xl transform transition-transform duration-300 ease-in-out md:hidden ${
-          isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+        className={`fixed top-[64px] right-0 left-0 z-40 bg-white shadow-2xl rounded-b-2xl transition-all duration-300 ease-in-out md:hidden overflow-x-hidden ${
+          isMenuOpen ? "max-h-[80vh] opacity-100 py-4 overflow-y-auto overflow-x-hidden" : "max-h-0 opacity-0"
         }`}
       >
-        <ul className="flex flex-col gap-3 px-6 py-4">
+        <ul className="flex flex-col gap-3 px-6">
           {menuItems.map((item) => (
             <li key={item.name}>
               <Link
@@ -108,16 +89,6 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-
-        {/* Mobile Contact Button */}
-        <a
-          href="https://wa.me/918468006792"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 mx-6 mt-3 py-2 bg-gradient-to-r from-violet-500 to-[#E0724A] text-white font-medium rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all"
-        >
-          Contact <ArrowRight className="w-4 h-4" />
-        </a>
       </div>
     </header>
   );
