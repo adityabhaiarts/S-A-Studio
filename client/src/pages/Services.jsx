@@ -1,5 +1,19 @@
 import React from "react";
-import { Film, Scissors, Music, Star, Video, Sparkles, CheckCircle } from "lucide-react";
+import {
+  Film,
+  Scissors,
+  Music,
+  Star,
+  Video,
+  Sparkles,
+  CheckCircle,
+  Camera,
+  Headphones,
+  Globe,
+  ShoppingBag,
+  Gamepad2,
+  Rocket,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 const services = [
@@ -39,19 +53,57 @@ const services = [
       "Motion graphics, green screen edits, and visual effects to bring imagination to life.",
     icon: <Sparkles className="w-10 h-10 text-purple-500" />,
   },
-];
-
-const whyChooseUs = [
-  "10+ Years of Editing Experience",
-  "Trusted by 500+ Clients Worldwide",
-  "Fast Turnaround & On-Time Delivery",
-  "Creative & Tailored Editing Styles",
+   // --- Newly Added Extra Services ---
+  {
+    title: "4K & Ultra HD Editing",
+    description:
+      "Crystal-clear 4K/8K edits for YouTube, films, advertisements, and brand promos.",
+    icon: <Camera className="w-10 h-10 text-red-500" />,
+  },
+  {
+    title: "Sound Design & Mixing",
+    description:
+      "Voice-over sync, cinematic sound effects, background music & audio mastering.",
+    icon: <Headphones className="w-10 h-10 text-orange-500" />,
+  },
+  {
+    title: "Travel & Vlog Editing",
+    description:
+      "Cinematic vlog edits, storytelling reels, and dynamic travel highlights.",
+    icon: <Globe className="w-10 h-10 text-teal-500" />,
+  },
+  {
+    title: "Product Showcase",
+    description:
+      "Clean e-commerce and product highlight videos with text overlays and smooth transitions.",
+    icon: <ShoppingBag className="w-10 h-10 text-emerald-500" />,
+  },
+  {
+    title: "Gaming Montages",
+    description:
+      "High-energy gaming edits, montages, and highlight reels with effects & memes.",
+    icon: <Gamepad2 className="w-10 h-10 text-purple-600" />,
+  },
+  {
+    title: "Brand Identity Packages",
+    description:
+      "Complete editing + design bundles including logos, intros, promos, and social assets.",
+    icon: <Rocket className="w-10 h-10 text-fuchsia-500" />,
+  },
 ];
 
 const stats = [
-  { number: "500+", label: "Projects Completed" },
-  { number: "300+", label: "Happy Clients" },
-  { number: "10+", label: "Years Experience" },
+  { label: "Projects Completed", value: "500+" },
+  { label: "Happy Clients", value: "300+" },
+  { label: "Years Experience", value: "5+" },
+];
+
+const workflow = [
+  "Share your raw footage & vision",
+  "We plan your edit style & storytelling",
+  "Editing with effects, music, & transitions",
+  "Review draft & share feedback",
+  "Deliver high-quality final video",
 ];
 
 const Services = () => {
@@ -85,8 +137,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            whileHover={{ scale: 1.05, rotate: 1 }}
-            className="bg-white/70 backdrop-blur-xl border border-gray-200 shadow-lg rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+            className="bg-white/70 backdrop-blur-xl border border-gray-200 shadow-lg rounded-2xl p-8 hover:shadow-2xl hover:scale-105 transition-all duration-300"
           >
             <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-violet-100 to-pink-100 rounded-xl mb-6">
               {service.icon}
@@ -100,56 +151,47 @@ const Services = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mt-20 text-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 text-center">
         {stats.map((stat, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: i * 0.2 }}
           >
-            <h4 className="text-4xl font-extrabold text-violet-600">
-              {stat.number}
-            </h4>
+            <h4 className="text-4xl font-bold text-violet-600">{stat.value}</h4>
             <p className="text-gray-700 mt-2">{stat.label}</p>
           </motion.div>
         ))}
       </div>
 
-      {/* Why Choose Us */}
-      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <h3 className="text-3xl font-bold text-gray-900 mb-6">
-            Why Choose <span className="text-violet-600">Us?</span>
-          </h3>
-          <ul className="space-y-4">
-            {whyChooseUs.map((point, i) => (
-              <li key={i} className="flex items-center gap-3">
-                <CheckCircle className="w-6 h-6 text-violet-500" />
-                <span className="text-gray-700">{point}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-          className="bg-gradient-to-r from-violet-200 to-pink-200 rounded-2xl p-10 shadow-lg"
-        >
-          <p className="text-lg text-gray-800 font-medium">
-            “They completely transformed my wedding video into a cinematic film.
-            Amazing editing skills, timely delivery, and truly professional work!”
-          </p>
-          <div className="mt-4 font-semibold text-gray-900">— Happy Client</div>
-        </motion.div>
-      </div>
+      {/* Workflow / Process */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="mt-20 max-w-4xl mx-auto text-center"
+      >
+        <h3 className="text-3xl font-bold text-gray-900 mb-6">
+          How We Work
+        </h3>
+        <div className="space-y-4">
+          {workflow.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="flex items-center gap-3 bg-white/60 p-4 rounded-xl shadow-md hover:shadow-lg transition"
+            >
+              <CheckCircle className="w-6 h-6 text-violet-500 flex-shrink-0" />
+              <p className="text-gray-700 font-medium">{step}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
 
-      {/* CTA */}
+      {/* CTA Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -157,10 +199,11 @@ const Services = () => {
         className="mt-20 text-center"
       >
         <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
-          Ready to Elevate Your Videos?
+          Ready to Bring Your Videos to Life?
         </h3>
         <p className="text-gray-600 mt-3 mb-6">
-          Let’s collaborate and create edits that capture attention and tell your story.
+          Let’s collaborate to create something extraordinary for your brand,
+          event, or channel.
         </p>
         <a
           href="https://wa.me/918468006792"
