@@ -76,14 +76,13 @@ const Navbar = () => {
   className={`absolute top-full left-0 w-full bg-white shadow-lg transition-all duration-300 ease-in-out md:hidden ${
     isMenuOpen ? "max-h-[80vh] opacity-100 overflow-y-auto" : "max-h-0 opacity-0 overflow-hidden"
   }`}
-  style={{ scrollbarWidth: "thin" }} // optional: slim scrollbar for Firefox
 >
-  <ul className="flex flex-col space-y-3 sm:space-y-4 p-5 text-base sm:text-lg font-medium">
+  <ul className="flex flex-col space-y-3 sm:space-y-4 p-5 text-base sm:text-lg font-medium overflow-x-hidden">
     {menuItems.map((item) => (
       <li key={item.name}>
         <Link
           to={item.path}
-          className="block hover:text-violet-600 transition"
+          className="block w-full hover:text-violet-600 transition"
           onClick={() => setIsMenuOpen(false)}
         >
           {item.name}
@@ -91,18 +90,6 @@ const Navbar = () => {
       </li>
     ))}
   </ul>
-
-  {/* Mobile Contact Button */}
-  <div className="px-5 pb-5">
-    <a
-      href="https://wa.me/918468006792"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center justify-center gap-2 w-full h-12 bg-gradient-to-r from-violet-500 to-[#E0724A] text-white font-medium rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all"
-    >
-      Contact <ArrowRight className="w-4 h-4" />
-    </a>
-  </div>
 </div>
 
       </nav>
