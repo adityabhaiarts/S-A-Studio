@@ -14,17 +14,17 @@ import j from '../assets/mot.jpeg';
 import k from '../assets/trav.jpg';
 
 const videoEdits = [
-  { id: 1, name: "Cinematic Intro", price: 799, desc: "Professional cinematic intro edits.", img: a, rating: 4.5, type: "Cinematic", popular: true },
-  { id: 2, name: "Color Grading", price: 899, desc: "Enhance visuals with color grading.", img: b, rating: 4, type: "Color", popular: false },
-  { id: 3, name: "Music Sync Edit", price: 999, desc: "Beat-synced music edits.", img: c, rating: 5, type: "Music", popular: true },
-  { id: 4, name: "LUTs & Filters", price: 799, desc: "Apply advanced LUTs & filters.", img: d, rating: 4.2, type: "Filters", popular: false },
-  { id: 5, name: "Travel Edit", price: 699, desc: "Stunning travel montage edits.", img: e, rating: 4.7, type: "Travel", popular: true },
-  { id: 6, name: "Vlog Edit", price: 599, desc: "Fun and engaging vlog edits.", img: f, rating: 4, type: "Vlog", popular: false },
-  { id: 7, name: "Gym/Fitness Edit", price: 899, desc: "Motivational gym video edits.", img: g, rating: 4.3, type: "Fitness", popular: true },
-  { id: 8, name: "Wedding Edit", price: 1099, desc: "Beautiful wedding highlights.", img: h, rating: 5, type: "Wedding", popular: true },
-  { id: 9, name: "Gaming Edit", price: 799, desc: "Exciting gaming highlight edits.", img: i, rating: 4.6, type: "Gaming", popular: true },
-  { id: 10, name: "Motivational Edit", price: 799, desc: "Inspiring motivational videos.", img: j, rating: 4.6, type: "Motivation", popular: false },
-  { id: 11, name: "Travel Vlog", price: 699, desc: "Compact travel vlog edits.", img: k, rating: 4.3, type: "Travel", popular: false },
+  { id: 1, name: "Cinematic Intro", price: 145, desc: "Professional cinematic intro edits.", img: a, rating: 4.5, type: "Cinematic", popular: true },
+  { id: 2, name: "Color Grading", price: 200, desc: "Enhance visuals with color grading.", img: b, rating: 4, type: "Color", popular: false },
+  { id: 3, name: "Music Sync Edit", price: 150, desc: "Beat-synced music edits.", img: c, rating: 5, type: "Music", popular: true },
+  { id: 4, name: "LUTs & Filters", price: 150, desc: "Apply advanced LUTs & filters.", img: d, rating: 4.2, type: "Filters", popular: false },
+  { id: 5, name: "Travel Edit", price: 200, desc: "Stunning travel montage edits.", img: e, rating: 4.7, type: "Travel", popular: true },
+  { id: 6, name: "Vlog Edit", price: 300, desc: "Fun and engaging vlog edits.", img: f, rating: 4, type: "Vlog", popular: false },
+  { id: 7, name: "Gym/Fitness Edit", price: 265, desc: "Motivational gym video edits.", img: g, rating: 4.3, type: "Fitness", popular: true },
+  { id: 8, name: "Wedding Edit", price: 415, desc: "Beautiful wedding highlights.", img: h, rating: 5, type: "Wedding", popular: true },
+  { id: 9, name: "Gaming Edit", price: 150, desc: "Exciting gaming highlight edits.", img: i, rating: 4.6, type: "Gaming", popular: true },
+  { id: 10, name: "Motivational Edit", price: 200, desc: "Inspiring motivational videos.", img: j, rating: 4.6, type: "Motivation", popular: false },
+  { id: 11, name: "Travel Vlog", price: 150, desc: "Compact travel vlog edits.", img: k, rating: 4.3, type: "Travel", popular: false },
 ];
 
 const Shop = () => {
