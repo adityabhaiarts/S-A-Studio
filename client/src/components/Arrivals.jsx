@@ -14,7 +14,7 @@ export default function Arrivals() {
     { id: 1, title: "GYM Editings", description: "Experience professional GYM style edits for your projects.", src: a },
     { id: 2, title: "Color Grading", description: "Enhance visuals with professional color grading presets.", src: b },
     { id: 3, title: "Music Nation Edit", description: "Seamlessly synced edits with beats to create engaging storytelling of Nation.", src: c },
-    { id: 4, title: "LUTs & Filters", description: "Apply advanced LUTs and filters to achieve stunning cinematic tones.", src: d },
+    { id: 4, title: "Image Editing", description: "Apply advanced LUTs and filters to achieve stunning cinematic tones.", src: d },
   ];
 
   const handleWhatsApp = (item) => {
